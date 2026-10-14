@@ -1,0 +1,55 @@
+{
+  "name": "whatsapp-rag-bot",
+  "version": "2.0.0",
+  "description": "WhatsApp bot with RAG capabilities using Qdrant vector database - supports multiple LLM and embedding providers",
+  "main": "backend/src/index.js",
+  "scripts": {
+    "start": "node backend/src/index.js",
+    "dev": "nodemon backend/src/index.js",
+    "start:backend": "node backend/src/index.js",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "setup:ollama": "ollama pull llama3.1 && ollama pull nomic-embed-text",
+    "test:config": "node -e \"require('./backend/src/config/config'); console.log('✓ Configuration valid')\""
+  },
+  "keywords": [
+    "whatsapp",
+    "rag",
+    "vector-database",
+    "chatbot",
+    "ai",
+    "ollama",
+    "openrouter",
+    "anthropic",
+    "openai",
+    "local-llm"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.1",
+    "@modelcontextprotocol/server-memory": "^2025.11.25",
+    "@modelcontextprotocol/server-sequential-thinking": "^2025.12.18",
+    "@qdrant/js-client-rest": "^1.15.1",
+    "axios": "^1.13.2",
+    "better-sqlite3": "^12.5.0",
+    "chrono-node": "^2.9.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "puppeteer": "^24.29.1",
+    "qrcode-terminal": "^0.12.0",
+    "redis": "^4.7.0",
+    "uuid": "^13.0.0",
+    "whatsapp-web.js": "^1.34.2",
+    "ws": "^8.18.3",
+    "zod": "^4.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
